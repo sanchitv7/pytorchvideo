@@ -103,7 +103,7 @@ class FrameVideo(Video):
         rel_frame_paths = g_pathmgr.ls(path)
 
         def natural_keys(text):
-            return [int(c) if c.isdigit() else c for c in re.split("(\d+)", text)]
+            return [int(c) if c.isdigit() else c for c in re.split("(\\d+)", text)]
 
         rel_frame_paths.sort(key=natural_keys)
         frame_paths = [os.path.join(path, f) for f in rel_frame_paths]
